@@ -40,11 +40,11 @@ variable "fruit_stock_with_price" {
 
 #Access a list of variable
 output "fruit_first" {
-  value = var.fruit_stock[0]
+  value = var.fruit_list[0]
 }
 
 output "fruit_second" {
-  value = var.fruit_stock[1]
+  value = var.fruit_list[1]
 }
 
 output "fruit_first_price" {

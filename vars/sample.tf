@@ -60,7 +60,7 @@ variable "fruit_details" {
   default = {
     apple = {
       stock = 100  # Number
-      type  = washington # string
+      type  = "washington" # string
       for_sale = true  # boolean
     }
   }

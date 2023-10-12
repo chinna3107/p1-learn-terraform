@@ -67,6 +67,9 @@ variable "fruit_details" {
 }
 
 # variable in a combination of any other string then it needs to be with in ${}
+output "fruit1" {
+  value = "fruit Name = ${var.fruit}"
+}
 
 output "fruit_details_apple" {
   value = "Apple stock = ${var.fruit_details["apple"].stock} , Apple Type =${var.fruit_details["apple"].type} ,Apple sale status = ${var.fruit_details["apple"].for_sale}"

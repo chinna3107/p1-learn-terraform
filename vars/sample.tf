@@ -39,15 +39,15 @@ variable "fruit_stock_with_price" {
 }
 
 #Access a list of variable
-output "fruit_frist" {
+output "fruit_first" {
   value = var.fruit_stock[0]
 }
 
-output "frist_second" {
+output "fruit_second" {
   value = var.fruit_stock[1]
 }
 
-output "fruit_frist_price" {
+output "fruit_first_price" {
   value = var.fruit_stock_with_price.apple.price
 }
 

@@ -1,13 +1,17 @@
-  var "ami" {
+  variable "ami" {
    default = "ami-07ecd1d0c2a8a881d"
   }
   
-  var "security_group" {
+  variable "security_group" {
     default = [ "sg-0c786c9e56b3a46f3" ]
   }
   
-  var "instance_type" {
+  variable "instance_type" {
     default = "t3.small"
+  }
+   
+   variable "zone_id" {
+  default = "Z02791651VB89NZU8FH7C"
   }
    
   resource "aws_instance" "frontend" {

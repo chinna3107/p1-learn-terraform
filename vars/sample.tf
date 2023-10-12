@@ -47,10 +47,10 @@ output "fruit_second" {
   value = var.fruit_list[1]
 }
 
-output "fruit_first_price" {
-  value = var.fruit_stock_with_price.apple.price
+output "fruit_stock_with_apple" {
+  value = var.fruit_stock["apple"].stock
 }
 
-output "fruit_second_stock" {
-  value = var.fruit_stock_with_price.banana[0]
+output "fruit_stock_with_price_of_banana" {
+  value = var.fruit_stock["banana"].price
 }

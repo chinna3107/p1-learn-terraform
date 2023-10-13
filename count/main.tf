@@ -13,8 +13,3 @@ resource "aws_instance" "instance" {
     Name = element(var.components, count.index)
   }
 }
-
-//resource "aws_security_group" "allow_lts" {
-//  count = length(var.components)
-//   name = element(var.components, count.index)
-// }

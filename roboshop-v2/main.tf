@@ -13,35 +13,42 @@
    variable "zone_id" {
   default = "Z02791651VB89NZU8FH7C"
   }
-   
-  resource "aws_instance" "frontend" {
-    ami           = var.ami
-    instance_type = var.instance_type
-    vpc_security_group_ids = var.security_group
-    
+
+  variable "components" {
+    default = {
+      frontend1 ={ name = "frontend" }
+    }
+  }
+
+    resource "aws_instance" "instance" {
+      for_each = var.components
+        ami           = var.ami
+        instance_type = var.instance_type
+        vpc_security_group_ids = var.security_group
+
     tags = {
-    Name = "frontend"
+      name = lookup(each.value,"name", null)
     }
   }
     
-  resource "aws_route53_record" "frontend" {
+  /*resource "aws_route53_record" "frontend" {
     zone_id = "Z02791651VB89NZU8FH7C"
     name    = "frontend-dev.devops-tools.online"
     type    = "A"
     ttl     = 30
     records = [aws_instance.frontend.private_ip]
   }
-    
-  resource "aws_instance" "mongodb" {
+  */
+ /* resource "aws_instance" "mongodb" {
     ami           = "ami-07ecd1d0c2a8a881d"
     instance_type = "t3.small"
     vpc_security_group_ids = [ "sg-0c786c9e56b3a46f3" ]
-    
+
     tags = {
     Name = "mongodb"
     }
   }
-    
+
   resource "aws_route53_record" "mongodb" {
     zone_id = "Z02791651VB89NZU8FH7C"
     name    = "mongodb-dev.devops-tools.online"
@@ -194,4 +201,4 @@
     type    = "A"
     ttl     = 30
     records = [aws_instance.payment.private_ip]
-  }
+  }*/

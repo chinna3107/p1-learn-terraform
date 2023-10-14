@@ -6,8 +6,11 @@ resource "aws_instance" "instance" {
   tags = {
     Name = var.name
    }
-}
 
+   provisioner  "local-exec" {
+   command = "sleep 60"
+ }
+}
 resource "aws_route53_record" "record" {
   zone_id = "Z02791651VB89NZU8FH7C"
   name    = "${var.name}-dev.devops-tools.online"

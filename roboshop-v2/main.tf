@@ -46,7 +46,7 @@
     name    = "${lookup(each.value, "name", null)}.devops-tools.online"
     type    = "A"
     ttl     = 30
-    records = [lookup(lookup(aws_instance.instance, each.key, "name", null), "private_ip", null)]
+    records = [lookup(lookup(aws_instance.instance, each.key, null), "private_ip", null)]
   }
 
  /* resource "aws_instance" "mongodb" {

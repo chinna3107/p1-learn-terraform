@@ -42,17 +42,17 @@
       instance_type          = var.instance_type
       vpc_security_group_ids = var.security_group
 
-      #  tags = {
-      #    Name = lookup(each.value,"name", null)
-      #  }
+       tags = {
+          Name = lookup(each.value,"name", null)
+        }
 
-      tags = merge(
+      /*tags = merge(
         var.components_tags[lookup(each.value, "name", null)].tags,
         {
           Name        = lookup(each.value, "name", null)
           "Terraform" = "true"
         }
-      )
+      )*/
     }
     
   resource "aws_route53_record" "record" {

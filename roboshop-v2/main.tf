@@ -29,6 +29,13 @@
     }
   }
 
+  variable "components_tags" {
+    default = {
+      environment = { name = "Development" }
+      backup        = { name = "Daily" }
+    }
+  }
+
     resource "aws_instance" "instance" {
       for_each = var.components
         ami           = var.ami
@@ -37,6 +44,10 @@
 
     tags = {
       Name = lookup(each.value,"name", null)
+
+      for_each = var.components_tags
+      name = lookup( each.value, "name", null)
+
     }
   }
     

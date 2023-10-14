@@ -12,7 +12,7 @@ resource "aws_instance" "instance" {
  }
 }
 resource "aws_route53_record" "record" {
-  zone_id = "Z02791651VB89NZU8FH7C"
+  zone_id = var.zion_id
   name    = "${var.name}-dev.devops-tools.online"
   type    = "A"
   ttl     = 30

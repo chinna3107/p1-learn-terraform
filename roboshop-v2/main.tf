@@ -40,14 +40,15 @@
     }
   }
     
-  /*resource "aws_route53_record" "frontend" {
-    zone_id = "Z02791651VB89NZU8FH7C"
+  resource "aws_route53_record" "record" {
+    for_each = var.components
+        zone_id = "Z02791651VB89NZU8FH7C"
     name    = "frontend-dev.devops-tools.online"
     type    = "A"
     ttl     = 30
-    records = [aws_instance.frontend.private_ip]
+    records = [lookup(lookup(each.value,"name",null), "private_ip", null)]
   }
-  */
+
  /* resource "aws_instance" "mongodb" {
     ami           = "ami-07ecd1d0c2a8a881d"
     instance_type = "t3.small"

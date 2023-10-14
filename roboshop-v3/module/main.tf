@@ -11,11 +11,12 @@ resource "aws_instance" "instance" {
    command = "sleep 60"
  }
 }
+
 resource "aws_route53_record" "record" {
   zone_id = var.zion_id
   name    = "${var.Name}-dev.devops-tools.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.instance.private_ip]
+  records = [ aws_instance.instance.private_ip ]
 }
 

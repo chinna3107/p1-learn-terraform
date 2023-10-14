@@ -16,16 +16,16 @@
 
   variable "components" {
     default = {
-      frontend1 ={ name = "frontend-dev" }
-      mongodb1 ={ name = "mongodb-dev" }
-      catalogue1 ={ name = "catalogue-dev" }
-      redis1 ={ name = "redis-dev" }
-      user1 ={ name = "user-dev" }
-      cart1 ={ name = "cart-dev" }
-      mysql1 ={ name = "mysql-dev" }
-      shipping1 ={ name = "shipping-dev" }
-      rabbitmq1 ={ name = "rabbitmq-dev" }
-      payment1 ={ name = "payment-dev" }
+      frontend ={ name = "frontend-dev" }
+      mongodb ={ name = "mongodb-dev" }
+      catalogue ={ name = "catalogue-dev" }
+      redis ={ name = "redis-dev" }
+      user ={ name = "user-dev" }
+      cart ={ name = "cart-dev" }
+      mysql ={ name = "mysql-dev" }
+      shipping ={ name = "shipping-dev" }
+      rabbitmq ={ name = "rabbitmq-dev" }
+      payment ={ name = "payment-dev" }
     }
   }
 
@@ -46,7 +46,7 @@
           Name = lookup(each.value,"name", null)
         }
 
-      /*tags = merge(
+     /* tags = merge(
         var.components_tags[lookup(each.value, "name", null)].tags,
         {
           Name        = lookup(each.value, "name", null)

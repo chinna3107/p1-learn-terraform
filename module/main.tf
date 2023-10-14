@@ -1,3 +1,7 @@
-module "test1" {
+module "test" {
 source ="./local-module"
+}
+
+output "test" {
+  value = module.test
 }

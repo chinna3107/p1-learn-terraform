@@ -16,7 +16,7 @@ variable "components" {
       name          = "cart"
       instance_type = "t3.micro"
     }
-   /* mongodb = {
+    mongodb = {
       name          = "mongodb"
       instance_type = "t3.micro"
     }
@@ -47,6 +47,6 @@ variable "components" {
     rabbitmq = {
       name          = "rabbitmq"
       instance_type = "t3.micro"
-    }*/
+    }
   }
 }

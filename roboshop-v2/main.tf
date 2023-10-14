@@ -16,16 +16,16 @@
 
   variable "components" {
     default = {
-      frontend1 ={ name = "frontend" }
-      mongodb1 ={ name = "mongodb" }
-      catalogue1 ={ name = "catalogue" }
-      redis1 ={ name = "redis" }
-      user1 ={ name = "user" }
-      cart1 ={ name = "cart" }
-      mysql1 ={ name = "mysql" }
-      shipping1 ={ name = "shipping" }
-      rabbitmq1 ={ name = "rabbitmq" }
-      payment1 ={ name = "payment" }
+      frontend1 ={ name = "frontend-dev" }
+      mongodb1 ={ name = "mongodb-dev" }
+      catalogue1 ={ name = "catalogue-dev" }
+      redis1 ={ name = "redis-dev" }
+      user1 ={ name = "user-dev" }
+      cart1 ={ name = "cart-dev" }
+      mysql1 ={ name = "mysql-dev" }
+      shipping1 ={ name = "shipping-dev" }
+      rabbitmq1 ={ name = "rabbitmq-dev" }
+      payment1 ={ name = "payment-dev" }
     }
   }
 

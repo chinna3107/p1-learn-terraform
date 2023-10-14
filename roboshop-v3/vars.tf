@@ -1,4 +1,4 @@
-variable "security_group" {
+variable "security_groups" {
   default = [ "sg-0c786c9e56b3a46f3" ]
 }
 

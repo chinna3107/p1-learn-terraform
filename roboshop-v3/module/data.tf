@@ -3,3 +3,4 @@ data "aws_ami" "ami" {
   name_regex   = "web.*"
   owners       = ["683468297985"]
 }
+

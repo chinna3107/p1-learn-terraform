@@ -5,18 +5,19 @@ resource "aws_instance" "instance" {
 
   tags = {
     Name = var.name
-   }
+  }
 
-   provisioner  "local-exec" {
-   command = "sleep 60"
- }
+  provisioner  "local-exec" {
+    command = "sleep 60"
+  }
+
 }
+
 
 resource "aws_route53_record" "record" {
   zone_id = var.zone_id
   name    = "${var.name}-dev.devops-tools.online"
   type    = "A"
   ttl     = 30
-  records = [ aws_instance.instance.private_ip ]
+  records = [aws_instance.instance.private_ip]
 }
-

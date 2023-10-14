@@ -4,7 +4,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = var.security_group
 
   tags = {
-    Name = var.Name
+    Name = var.name
    }
 
    provisioner  "local-exec" {
@@ -14,7 +14,7 @@ resource "aws_instance" "instance" {
 
 resource "aws_route53_record" "record" {
   zone_id = var.zion_id
-  name    = "${var.Name}-dev.devops-tools.online"
+  name    = "${var.name}-dev.devops-tools.online"
   type    = "A"
   ttl     = 30
   records = [ aws_instance.instance.private_ip ]

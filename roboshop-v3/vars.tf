@@ -9,11 +9,11 @@ variable "zone_id" {
 variable "components" {
   default = {
     frontend = {
-      Name = "frontend"
+      name = "frontend"
       instance_type = "t3.micro"
     }
     cart = {
-      Name = "cart"
+      name = "cart"
       instance_type = "t3.micro"
     }
   }

@@ -47,7 +47,7 @@
       #  }
 
       tags = merge(
-        var.components_tags[each.value].tags,
+        var.components_tags[lookup(each.value, "name", null)].tags,
         {
           Name        = lookup(each.value, "name", null)
           "Terraform" = "true"
